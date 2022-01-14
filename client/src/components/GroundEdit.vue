@@ -116,7 +116,7 @@ export default {
         },
         {
           label: "Tipo di offerta",
-          code: "offert_type",
+          code: "offer_type",
           type: "select",
           options: [
             {

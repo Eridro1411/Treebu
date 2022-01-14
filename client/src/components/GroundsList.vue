@@ -1,17 +1,19 @@
 <template>
     <div class="w-screen flex flex-col items-center">
         Grounds List
-        <div @click="goToDetail(ground)" v-for="(ground, index) in grounds" :key="index">
-            <img :src="ground.photo" alt="">
-            <p> Comune: {{ground.common}}</p>
-            <p> Foglio catastale: {{ground.cadastral_sheet}}</p>
-            <p> Mappa catastale: {{ground.cadastral_map}}</p>
-            <p> Dimensione: {{ground.dimension}} ettari</p>
-            <p> Tipo di terreno: {{ground.type_ground}}</p>
-            <p> Irrigazione: {{ground.irrigation}}</p>
-            <p> Tipo di Offerta: {{ground.offer_type}}</p>
-            <p> Canone: {{ground.offer_fee}} €<span v-if="ground.offer_type == 'Affitto'">/Mese</span></p>
-            <p v-if="ground.availability == '1'">Disponibilità: <span v-if="ground.availability == '1'">Si</span> <span v-if="ground.availability == '0'">No</span></p>
+        <div @click="goToDetail(ground)" v-for="(ground, index) in grounds" :key="index" class="m-4 flex bg-green-300 w-1/3">
+            <img :src="ground.photo" alt="" class="w-96 p-3">
+            <div class="flex flex-col m-4 grow">
+                <p> Comune: {{ground.common}}</p>
+                <p> Foglio catastale: {{ground.cadastral_sheet}}</p>
+                <p> Mappa catastale: {{ground.cadastral_map}}</p>
+                <p> Dimensione: {{ground.dimension}} ettari</p>
+                <p> Tipo di terreno: {{ground.type_ground}}</p>
+                <p> Irrigazione: {{ground.irrigation}}</p>
+                <p> Tipo di Offerta: {{ground.offer_type}}</p>
+                <p> Canone: {{ground.offer_fee}} €<span v-if="ground.offer_type == 'Affitto'">/Mese</span></p>
+                <p v-if="ground.availability == '1'">Disponibilità: <span v-if="ground.availability == '1'">Si</span> <span v-if="ground.availability == '0'">No</span></p>
+            </div>
         </div>
     </div>
 </template>

@@ -1,9 +1,9 @@
 <template>
     <div>
         Ground Detail 
-        <div class="flex w-screen">
+        <div class="flex w-screen bg-green-300">
             <img :src="ground.photo" alt="">
-            <div>
+            <div class="text-2xl flex flex-col justify-center w-full">
                 <p>Comune del terreno: {{ground.common}}</p>
                 <p>Foglio catastale: {{ground.cadastral_sheet}}</p>
                 <p>Mappa catastale: {{ground.cadastral_map}}</p>
@@ -14,9 +14,6 @@
                 <p>Canone: {{ground.offer_fee}} €<span v-if="ground.offer_type == 'Affitto'" >/Mese</span></p>
                 <p>Disponibilità: <span v-if="ground.availability == 1"> Si</span> <span v-if="ground.availability == 0"> No</span></p>
             </div>
-            <button @click="goToEdit(ground)">
-                modifica
-            </button>
         </div>
     </div>
 </template>

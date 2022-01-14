@@ -8,8 +8,7 @@ use Illuminate\Http\Request;
 class GroundController extends Controller
 {
     public function list(Request $req) {
-        $sortMethod = "";
-        return Ground::orderBy("created_at",$sortMethod)->get();
+        return Ground::all();
     }
 
     public function detail($id) {
@@ -55,6 +54,7 @@ class GroundController extends Controller
         
         $ground->save();
 
-        return response()->json($ground,201);
+        return response()->json($ground,200);
     }
+
 }

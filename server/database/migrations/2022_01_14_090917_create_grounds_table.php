@@ -23,7 +23,7 @@ class CreateGroundsTable extends Migration
             $table->string('type_ground')->nullable();
             $table->string('irrigation')->nullable();
             $table->string('offer_type')->nullable();
-            $table->string('offer_fee')->nullable();
+            $table->double('offer_fee')->nullable();
             $table->boolean('availability')->nullable();
             $table->timestamps();
             $table->softDeletes();
